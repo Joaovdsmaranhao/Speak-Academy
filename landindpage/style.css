@@ -650,7 +650,8 @@ nav.scrolled {
     background-color: var(--azulclaro);
     border-radius: 10px;
     padding: 10px;
-    margin:30px 0 ;
+    margin: 30px 0 ;
+    width: 90%;
 }
 
 .warranty-box-icon {
