@@ -1,0 +1,1170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-margin: 70px;
+}
+
+:root {
+    --azulclaro:#0051ff33;
+    --azul:#3235e1;
+    --azulescuro: #1719b4;
+    --vermelho: #f52222;
+    --vermelhoescuro:#bd0505;
+    --amarelo:#FFD700;
+    --amareloescuro:#FFC107;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    align-items: center;
+    height: 70px;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+nav.scrolled {
+    background-color: white;
+    box-shadow: 1px 1px 5px black;
+    transition: 0.5s ease;
+}
+
+.nav-links a.scrolled {
+    color: black;
+}
+
+#academy.scrolled {
+    color: black;
+}
+
+.menu-mobile button {
+    border: none;
+    background-color: rgb(0, 0, 0);
+    cursor: pointer;
+    display: none;
+    transition: all 0.5s ease;
+}
+
+.menu-mobile i {
+    background-color: transparent;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.menu-nav-links,#mobile-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    list-style: none;
+    transform: translatey(-270px);
+    opacity: 0;
+    transition: transform 1s  ease-out, opacity 0.3s ease;
+}
+.menu-nav-links.activate,#mobile-btn.activate {
+    opacity: 1;
+    transform: translatey(0);
+    transition: transform 0.6s ease, opacity 2s ease;
+}
+
+.menu-nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    position: relative;
+    transition: 0.5s ease;
+}
+.nav-links a::after{
+    content: '';
+    width: 0;
+    height: 2.5px;
+    background: linear-gradient(9000deg, rgb(0, 0, 0), rgb(0, 183, 255));
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: width 0.5s ease;
+}
+
+.nav-links a:hover::after{
+    width: 100%;
+}
+
+
+.logo{
+    font-family: "Stack Sans Headline", sans-serif;
+    font-weight: 300;
+    color: var(--vermelho);
+}
+.logo span {
+    color: rgb(255, 255, 255);
+    transition: 0.5s ease;
+}
+
+.btn-inscricao{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    background-color: var(--azul);
+    width: 8rem;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px rgb(30, 98, 233);
+    transition:  all 0.5s ease;
+}
+
+.btn-inscricao:hover {
+    transform: scale(1.05);
+    background-color: var(--azulescuro);
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(9000deg, blue, rgb(1, 1, 82));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.hero-right {
+    text-align: start;
+    position: relative;
+}
+
+.hero-img {
+    width: 55%;
+    border-radius: 20px;
+    margin: 0 90px;
+    box-shadow: 3px 3px 15px black;
+}
+
+.hero-title {
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 300;
+    width: 80%;
+    color: white;
+    font-size: 3rem;
+}
+.hero-title span{
+    color: var(--amarelo);
+}
+
+.hero-desc{
+    font-family: "Momo Trust Display", sans-serif;
+    color: white;
+    width: 70%;
+    opacity: 0.7;
+    margin-top: 20px;
+    font-size: 1.3rem;
+}
+
+.hero-btn {
+    background-color: var(--amarelo);
+    color: black;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    width: 250px;
+    height: 70px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px rgb(30, 98, 233);
+    transition:  all 0.5s ease;
+}
+
+.hero-btn:hover {
+    transform: scale(1.05);
+    background-color: var(--amareloescuro);
+    box-shadow: 1px 1px 5px var(--amarelo);
+}
+
+.hero-alunos {
+    font-family: "Poppins", sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+.hero-alunos span {
+    font-weight: 800;
+}
+
+.hero-metodo {
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 100;   
+    font-size: 15px; 
+    background-color: var(--amareloescuro);
+    color: rgb(0, 0, 0);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 20px;
+    width: 40%;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(212, 211, 211, 0.27);
+}
+
+.about-title {
+    color: var(--azulescuro);
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    margin-top: 30px;
+    text-transform: uppercase;
+}
+
+.about-desc { 
+    width: 50%;
+    margin-top: 20px;
+    font-family: "Stack Sans Headline", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    margin-bottom: 50px;
+}
+
+.about-lista {
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    color: var(--azul);
+    margin-bottom: 20px;
+    margin: 0 auto;
+    
+}
+
+.about-caixa {
+    font-size: 12px;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    background-color: rgb(255, 255, 255);
+    width: 40%;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 1px 4px black;
+    padding: 1% 0;
+}
+
+.about-caixa i {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 10%;
+    font-size: 13px;
+    color: rgb(10, 199, 10);
+}
+
+.about-caixa i h2 {
+    color: black;
+    font-weight: 200;
+}
+
+.foryou {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.27);;
+    margin-bottom: 40px;
+    
+}
+
+.foryou-title {
+    color: var(--azulescuro);
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 100;
+    font-size: 25px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.foryou-card {
+    display: flex;
+    gap: 30px;
+    text-align: center;
+}
+
+.foryou-item {
+    width: 100%;
+    height:200px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 4px rgba(0,0,0,0.84);
+    background-color: rgb(254, 254, 254);
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.foryou-item:hover {
+    box-shadow: 1px 3px 10px 0px rgba(0,0,0,0.73);
+    transform: scale(1.01);
+}
+
+.foryou-item i {
+    font-size: 40px;
+    background-color: var(--azulclaro);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--azulescuro);
+}
+
+.foryou-item h3 {
+    margin-top: 20px;
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+}
+
+.foryou-item p {
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.learn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(212, 211, 211, 0.27);
+    padding-bottom: 50px;
+    margin-bottom:60px ;
+}
+
+.learn-title {
+    color: var(--azulescuro);
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 100;
+    font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+.learn-desc {
+    width: 50%;
+    font-family: "Stack Sans Headline", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    margin-bottom: 50px;
+}
+
+.learn-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 20px;
+    width: 60%;
+}
+
+.learn-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-left: 20px;
+    height: 130px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.84);
+    background-color: white;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.learn-item:hover {
+    box-shadow: 1px 3px 8px 0px rgba(0,0,0,0.73);
+    transform: scale(1.01);
+}
+
+.learn-item i {
+    font-size: 30px;
+    background-color: var(--azulclaro);
+    border-radius: 30%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--azulescuro);
+}
+
+.feedback {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.feedback-title {
+    color: var(--azulescuro);
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 100;
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+.feedback-card {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 90px;
+}
+
+
+.feedback-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.84);
+    background-color: white;
+    border-radius: 15px;
+    width: 30%;
+
+}
+
+.feedback-coment {
+    font-size: 20px;
+    width: 90%;
+    margin: 15px 0;
+}
+
+.stars {
+    color: orange;
+}
+
+.price {
+    background-color: rgba(212, 211, 211, 0.27);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.price-span {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    background-color: var(--vermelho);
+    color: white;
+    padding: 8px;
+    border-radius: 15px;
+}
+
+.price-title {
+    color: var(--azulescuro);
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 100;
+    font-size: 30px;
+    margin-bottom: 40px;
+    width: 50%;
+    text-align: center;
+}
+
+.price-card {
+    background-color: white;
+    padding: 20px;
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px var(--azulclaro);
+    border: solid 2px var(--azulclaro);
+    margin-bottom: 50px;
+}
+
+.price-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.price-item-old del {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    color: var(--vermelho)
+}
+
+.price-item h3 {
+    color: var(--azulescuro);
+    font-family: "Poppins", sans-serif;
+    font-size: 40px;
+    line-height: 40px;
+}
+
+.price-item-desc {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    opacity: 0.7;
+    margin-bottom: 20px;
+}
+
+
+.price-item-box{
+    display: flex;
+    padding-left: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.price-item-box i {
+    color: green;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+}
+.price-item-box p {
+    font-family: "Poppins", sans-serif;
+}
+
+.price-btn {
+    background-color: var(--vermelho);
+    color: white;
+    text-decoration: none;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-family: "Momo Trust Display", sans-serif;
+    border-radius: 10px;
+    transition: 0.5s ease;
+}
+
+.price-btn i {
+    padding-left: 10px;
+}
+
+.price-btn:hover {
+    transform: scale(1.05);
+    background-color: var(--vermelhoescuro);
+}
+
+.warranty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    background-color: white;
+    margin: 50px 0;
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px var(--azulclaro);
+    border: solid 2px var(--azulclaro);
+}
+
+.warranty-icon {
+    font-size: 30px;
+    background-color: var(--azulclaro);
+    border-radius: 50%;
+    margin-top: 50px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--azulescuro);
+}
+
+.warranty-title {
+    color: var(--azulescuro);
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 100;
+    font-size: 30px;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.warranty-desc {
+    font-family: "Stack Sans Headline", sans-serif;
+    font-weight: 200;
+    text-align: center;
+    font-size: 20px;
+    width: 80%;
+}
+
+.warranty-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--azulclaro);
+    border-radius: 10px;
+    padding: 10px;
+    margin:30px 0 ;
+}
+
+.warranty-box-icon {
+    font-size: 20px;
+    background-color: transparent;
+    color: green;
+    padding-right: 10px;
+}
+
+.warranty-box h3 {
+    font-family: "Poppins", sans-serif;
+    color: var(--azul);
+}
+
+.teacher {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(212, 211, 211, 0.27);
+    padding: 40px 0;
+}
+
+.teacher-title {
+    color: var(--azulescuro);
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 100;
+    font-size: 30px;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+
+}
+
+.teacher-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 50%;
+    border-radius: 10px;
+    padding: 40px 0;
+    box-shadow: 0 0 3px rgba(0,0,0,0.84);
+}
+
+.teacher-box img {
+    width: 40%;
+    border-radius: 10px;
+    margin-bottom: 10px;   
+}
+
+.teacher-name {
+    font-family: "Stack Sans Headline", sans-serif;
+    font-size: 30px;
+}
+
+.teacher-desc {
+    margin: 20px 0;
+    width: 80%;
+    font-family: "Stack Sans Headline", sans-serif;
+    font-weight: 250;
+}
+
+.teacher-desc span {
+    font-weight: 700;
+}
+
+.teacher div {
+    display: grid;
+    gap: 10px;
+}
+
+.teacher-card {
+    font-family: "Stack Sans Headline", sans-serif;
+    background-color: var(--azulclaro);
+    padding: 7px;
+    border-radius: 15px;
+    color: var(--azul);
+    text-align: center;
+}
+
+.cta {
+    background: linear-gradient(180deg, blue, rgb(1, 1, 82));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    height: 70vh;
+}
+
+.cta-title {
+    color: white;
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 100;
+    font-size: 30px;
+    margin-bottom: 20px;
+    width: 40%;
+    text-align: center;
+}
+
+.cta-desc {
+    text-align: center;
+    color:  white;
+    font-family: "Stack Sans Headline", sans-serif;
+    font-weight: 400;
+    width: 40%;
+}
+
+.cta-btn {
+    background-color: var(--vermelho);
+    color: white;
+    text-decoration: none;
+    width: 32%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-family: "Momo Trust Display", sans-serif;
+    border-radius: 10px;
+    transition: 0.5s ease;
+}
+
+.cta-btn i {
+    padding-left: 10px;
+}
+
+.cta-btn:hover {
+    transform: scale(1.05);
+    background-color: var(--vermelhoescuro);
+}
+
+footer {
+    padding: 20px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    opacity: 0.7;
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 100;
+}
+
+
+@media (max-width: 1030px) {
+
+    header {
+        position: relative;
+    }
+
+    nav.scrolled {
+        background-color:transparent;
+        box-shadow: 0 0 0px black;
+    }
+
+    .nav-links a.scrolled {
+        color: black;
+    }
+
+    #academy.scrolled {
+        color: rgb(255, 255, 255);
+    }
+        
+    nav {
+        display: flex;
+        flex-direction: column;
+        height: 0;
+        text-align: center;
+    }
+
+    .logo {
+        width: 18%;
+        font-size: 20px;
+        padding-left: 10px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .nav-links,.btn-inscricao {
+        display: none;
+    }
+
+    .menu-mobile button {
+        display: flex;
+        margin: 10px 0;
+    }
+
+    .menu-nav-links.activate,.mobile-menu-links a.activate {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        gap: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .hero-img {
+        width: 90%;
+        margin: 0 30px 0 0;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        width: 90%;
+    }
+
+
+    .hero-btn {
+        width: 82%;
+        height: 65px;
+        font-size: 20px;
+    }
+
+    .hero-metodo {
+        position: static;
+        margin-top: 20px;
+        width: 90%;
+        gap: 10px;
+        margin-right: 90px;
+        text-align: center;
+        height: auto;
+        padding: 10px;
+    }
+
+    .hero-right{
+        width: 100%;
+        padding-left: 50px;
+    }
+
+
+    .about-desc {
+        width: 85%;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .about-caixa {
+        width: 80%;
+        padding: 50px 0;
+    }
+
+    .foryou-card {
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .learn-desc {
+        width: 85%;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .learn-card {
+        width: 90%;
+    }
+
+    .learn-card div h3 {
+        font-size: 25px;
+    }
+
+    .learn-card div p {
+        font-size: 17px;
+    }
+
+    .feedback-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feedback-item {
+        width: 80%;
+    }
+
+    .price-title {
+        width: 80%;
+        font-size: 24px;
+    }
+
+    .price-card {
+        width: 80%;
+    }
+
+    .warranty {
+        width: 80%;
+        text-align: center;
+    }
+
+    .teacher-box {
+        width: 80%;
+    }
+
+    .teacher-box img {
+        width: 70%;
+    }
+
+    .teacher-desc {
+        text-align: center;
+    }
+
+    .cta-title {
+        width: 85%;
+        font-size: 24px;
+    }
+
+    .cta-desc {
+        width: 80%;
+    }
+
+    .cta-btn {
+        width: 80%;
+        height: 65px;
+    }
+}
+
+@media (max-width: 670px) {
+
+    
+    nav.scrolled {
+        background-color:transparent;
+        box-shadow: 0 0 0px black;
+        transition: 0.5s ease;
+    }
+
+    .nav-links a.scrolled {
+        color: black;
+    }
+
+    #academy.scrolled {
+        color: rgb(255, 255, 255);
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        height: 0;
+        text-align: center;
+    }
+
+    .logo {
+        width: 18%;
+        font-size: 20px;
+        padding-left: 10px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-desc {
+        font-size: 1rem;
+    }
+
+    .hero-btn {
+        font-size: 16px;
+        height: 80px;
+    }
+
+    .hero-metodo {
+        width: 80%;
+        font-size: 15px;
+        text-align: center;
+        gap: 10px;
+        font-weight: 100;
+    }
+
+
+    .about-title, 
+    .foryou-title, 
+    .learn-title, 
+    .feedback-title, 
+    .price-title, 
+    .teacher-title, 
+    .cta-title {
+        font-size: 22px;
+        text-align: center;
+    }
+    .about-caixa i h2 {
+        font-size: 14px;
+    }
+
+    .foryou-item i {
+        width: 60px;
+        height: 60px;
+        font-size: 25px;
+    }
+
+    .learn-item {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 20px;
+    }
+
+    .feedback-coment {
+        font-size: 16px;
+    }
+
+    .price-item h3 {
+        font-size: 35px;
+    }
+
+    .cta-btn {
+        height: 60px;
+        font-size: 13px;
+    }
+
+    footer {
+        font-size: 13px;
+        text-align: center;
+    }
+}
+
+@media (max-width:530px) {
+
+    
+    nav.scrolled {
+        background-color:transparent;
+        box-shadow: 0 0 0px black;
+    }
+
+    .nav-links a.scrolled {
+        color: black;
+    }
+
+    #academy.scrolled {
+        color: rgb(255, 255, 255);
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        height: 0;
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    .nav-links,.btn-inscricao {
+        display: none;
+    }
+
+    .menu-mobile button {
+        display: flex;
+        margin: 10px 0;
+    }
+
+    .menu-nav-links.activate,.mobile-menu-links a.activate {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        gap: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .hero-title{
+        font-size: 20px;
+        margin-top: 200px;
+        margin-left: 40px
+    }
+
+    .hero-desc{
+        font-size: 15px;
+        width: 100%;
+        margin-left: 40px;
+        margin-bottom: 20px;
+    }
+
+    .hero-btn {
+        width: 150px;
+        margin-left: 30px;
+        height:110px;
+    }
+    .hero-left{
+        margin-left: 20px;
+    }
+
+    .hero img {
+        width: 78%;
+    }
+
+    .hero-metodo {
+        background-color: var(--vermelho);
+    }
+    .about-title, 
+    .foryou-title, 
+    .learn-title, 
+    .feedback-title, 
+    .price-title, 
+    .teacher-title, 
+    .cta-title {
+        font-size: 13px;
+        text-align: center;
+    }
+    .about-caixa i h2 {
+        font-size: 14px;
+    }
+
+    .about-desc, 
+    .foryou-desc, 
+    .learn-desc, 
+    .feedback-desc, 
+    .price-desc, 
+    .teacher-desc, 
+    .cta-desc{
+        font-size: 10px;
+    }
+
+}
