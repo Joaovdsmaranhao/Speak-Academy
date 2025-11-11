@@ -17,9 +17,6 @@
 }
 
 header {
-    position: fixed;
-    top: 0;
-    z-index: 100;
     width: 100%;
 }
 
@@ -33,32 +30,19 @@ nav {
     position: relative;
 }
 
-nav.scrolled {
-    background-color: white;
-    box-shadow: 1px 1px 5px black;
-    transition: 0.5s ease;
-}
-
-.nav-links a.scrolled {
-    color: black;
-}
-
-#academy.scrolled {
-    color: black;
-}
 
 .menu-mobile button {
     border: none;
-    background-color: rgb(0, 0, 0);
     cursor: pointer;
     display: none;
+    background-color: white;
     transition: all 0.5s ease;
 }
 
 .menu-mobile i {
     background-color: transparent;
-    font-size: 20px;
-    color: rgb(255, 255, 255);
+    font-size: 30px;
+    color: rgb(0, 0, 0);
 }
 
 .menu-nav-links,#mobile-btn {
@@ -91,7 +75,7 @@ nav.scrolled {
 }
 
 .nav-links a {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     text-decoration: none;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
@@ -120,7 +104,7 @@ nav.scrolled {
     color: var(--vermelho);
 }
 .logo span {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     transition: 0.5s ease;
 }
 
@@ -806,33 +790,27 @@ footer {
     header {
         position: relative;
     }
-
-    nav.scrolled {
-        background-color:transparent;
-        box-shadow: 0 0 0px black;
-    }
-
-    .nav-links a.scrolled {
-        color: black;
-    }
-
-    #academy.scrolled {
-        color: rgb(255, 255, 255);
-    }
         
     nav {
+        background-color: white;
+        width: 100%;
         display: flex;
+        height: 120px;
         flex-direction: column;
-        height: 0;
         text-align: center;
+        transition: 0.5s ease;
+        padding-bottom: 10px;
+    }
+
+    nav.activate {
+        height: 260px;
+        transition: 0.5s ease;
     }
 
     .logo {
         width: 18%;
         font-size: 20px;
-        padding-left: 10px;
-        margin-bottom: 20px;
-        margin-top: 20px;
+        margin-top: 10px;
     }
 
     .nav-links,.btn-inscricao {
@@ -841,7 +819,10 @@ footer {
 
     .menu-mobile button {
         display: flex;
-        margin: 10px 0;
+    }
+
+    #mobile-btn {
+        margin-top: 5px;
     }
 
     .menu-nav-links.activate,.mobile-menu-links a.activate {
@@ -849,8 +830,12 @@ footer {
         flex-direction: column;
         list-style: none;
         gap: 10px;
-        margin-bottom: 10px;
         text-align: center;
+    }
+
+    .menu-nav-links.activate a {
+        color: rgb(0, 0, 0);
+        font-family: "Momo Trust Display", sans-serif;
     }
 
     .hero-img {
@@ -973,26 +958,23 @@ footer {
 
 @media (max-width: 670px) {
 
-    
-    nav.scrolled {
-        background-color:transparent;
-        box-shadow: 0 0 0px black;
-        transition: 0.5s ease;
+
+
+    .menu-nav-links.activate a {
+        color: rgb(0, 0, 0);
+        font-family: "Momo Trust Display", sans-serif;
     }
 
-    .nav-links a.scrolled {
-        color: black;
-    }
-
-    #academy.scrolled {
-        color: rgb(255, 255, 255);
-    }
 
     nav {
+        background-color: white;
+        width: 100%;
         display: flex;
+        height: 150px;
         flex-direction: column;
-        height: 0;
         text-align: center;
+        transition: 0.5s ease;
+        padding-bottom: 10px;
     }
 
     .logo {
@@ -1073,29 +1055,23 @@ footer {
 
 @media (max-width:530px) {
 
-    
-    nav.scrolled {
-        background-color:transparent;
-        box-shadow: 0 0 0px black;
-    }
-
-    .nav-links a.scrolled {
-        color: black;
-    }
-
-    #academy.scrolled {
-        color: rgb(255, 255, 255);
-    }
-
     nav {
+        background-color: white;
+        width: 100%;
         display: flex;
+        height: 150px;
         flex-direction: column;
-        height: 0;
+        text-align: center;
+        transition: 0.5s ease;
+    }
+
+    nav.activate {
+        height: 290px;
         text-align: center;
     }
 
     .logo {
-        margin-bottom: 20px;
+        margin-right: 10%;
         margin-top: 20px;
     }
     .nav-links,.btn-inscricao {
@@ -1144,6 +1120,9 @@ footer {
     .hero-metodo {
         background-color: var(--vermelho);
     }
+    .warranty-title {
+        width: 80%;
+    }
     .about-title, 
     .foryou-title, 
     .learn-title, 
@@ -1151,8 +1130,9 @@ footer {
     .price-title, 
     .teacher-title, 
     .cta-title {
-        font-size: 13px;
+        font-size: 20px;
         text-align: center;
+        width: 70%;
     }
     .about-caixa i h2 {
         font-size: 14px;
