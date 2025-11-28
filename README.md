@@ -61,7 +61,7 @@ A página funciona bem em:
 ## 📄 Licença
 
 Este projeto é apenas para fins demonstrativos e acadêmicos.
-A marca Ager Academy não deve ser utilizada comercialmente.
+A marca Speak Academy não deve ser utilizada comercialmente.
 
 
 ---
